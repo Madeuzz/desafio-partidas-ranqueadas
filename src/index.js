@@ -1,30 +1,27 @@
 //Função que retorna o valor de saldo pontuação de vitórias.
 function ranqueada(name,win,lose){
-
-    console.log(`Seja Bem-Vindo ${name}! Sua partida já irá começar!`)
     let i = 0
-
+    console.log(`Seja Bem-Vindo ${name}! Sua partida já irá começar!`)
+    //Estrutura de repetição.
     do{
         if((i % 2) === 0){
-
             console.log(`PARABÉNS VOCê VENCEU: OBTIDO 3 PONTOS RANQUEADOS!`)
             win += 3
-
         }else{
             console.log(`Infelizmente não foi desta vez: Perdido 1 ponto ranqueado.`)
             lose++
         }
-
         saldo = win - lose
-
         i ++
     }while( i < 20 ) 
     return saldo
 }
 
+//Função que retorna o Elo atual do herói.
 function rateElo (){
 
     let elo =""
+    //Estruturas de decisão
     if(rate < 10){
         elo = "Ferro"
     }else if(rate >= 11 && rate <= 20){
@@ -43,9 +40,10 @@ function rateElo (){
     return elo
 }
 
-// Variaveis
+// Variaveis.
 let hero = "Madeuz"
 let rate = ranqueada(hero,90,16)
 let level = rateElo()
 
+//Interpolação de Strings
 console.log(`O Herói ${hero} tem o saldo de ${rate} vitórias e está no nível ${level}.`)
